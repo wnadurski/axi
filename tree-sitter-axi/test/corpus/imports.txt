@@ -1,0 +1,50 @@
+==================
+Import statements
+==================
+
+from http import createServer, response;
+from IO import IO, test, * as io;
+from std import * as std;
+---
+
+(source_file
+  (importStatement
+    (packagePath
+      (identifier))
+    (importsList
+      (identifier)
+      (identifier)))
+  (importStatement
+    (packagePath
+      (identifier))
+    (importsList
+      (identifier)
+      (identifier)
+      (importAll
+        (identifier))))
+  (importStatement
+    (packagePath
+      (identifier))
+    (importsList
+      (importAll
+        (identifier)))))
+
+
+==================
+Import paths statements
+==================
+
+from utils/http/tests import testing;
+from ./utils/testing import test;
+---
+
+(source_file
+  (importStatement
+    (packagePath
+      (identifier))
+    (importsList
+      (identifier)))
+  (importStatement
+    (localPath)
+    (importsList
+      (identifier))))
